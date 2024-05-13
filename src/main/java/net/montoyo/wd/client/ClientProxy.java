@@ -536,13 +536,7 @@ public class ClientProxy extends SharedProxy implements ISelectiveResourceReload
                 TileEntityScreen tes = screenTracking.get(id);
                 double dist2 = mc.player.getDistanceSq(tes.getPos());
 
-                if(tes.isLoaded()) {
-                    if(dist2 > WebDisplays.INSTANCE.unloadDistance2)
-                        tes.unload();
-                    else if(WebDisplays.INSTANCE.enableSoundDistance)
-                        tes.updateTrackDistance(dist2, SoundSystemConfig.getMasterGain());
-                } else if(dist2 <= WebDisplays.INSTANCE.loadDistance2)
-                    tes.load();
+                
             }
 
             //Load/unload minePads depending on which item is in the player's hand
